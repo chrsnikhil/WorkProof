@@ -221,7 +221,7 @@ const FloatingNav = ({
               onClick={() => {
                 setActiveIndex(idx)
                 if (navItem.externalLink) {
-                  window.open(navItem.externalLink, '_blank')
+                  window.open(navItem.externalLink, '_blank', 'noopener,noreferrer')
                 } else if (navItem.name === "Home") {
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 } else {
@@ -250,6 +250,7 @@ const FloatingNav = ({
             <Button
               size="sm"
               className="bg-white/15 backdrop-blur-xl text-white hover:bg-white/25 border border-white/30 rounded-full px-4 py-2 text-sm"
+              onClick={() => window.open('https://coinbasecdphack.vercel.app/', '_blank')}
             >
               Launch App
             </Button>
@@ -348,7 +349,7 @@ export default function WorkProofPlatform() {
       name: "Wallet",
       link: "wallet",
       icon: <Wallet className="w-4 h-4" />,
-      externalLink: "https://sepolia.basescan.org/address/0xeccf2782bb3685e9fce4bb9d94fd57d2f24ad3e4"
+      externalLink: "https://sepolia.basescan.org/address/0xEaFfef4549D2d92a3E2802D9E588bFfF2e442a3f"
     },
   ]
 
@@ -509,45 +510,37 @@ export default function WorkProofPlatform() {
 
             {/* Action Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-8 justify-center items-center mt-12"
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.6, duration: 1 }}
             >
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  y: -5,
+              <Button
+                size="lg"
+                className="bg-white/20 backdrop-blur-2xl text-white hover:bg-white/30 text-lg px-10 py-6 border border-white/40 rounded-2xl font-light"
+                onClick={() => {
+                  const url = 'https://coinbasecdphack.vercel.app/';
+                  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                  if (newWindow) newWindow.focus();
                 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
-                <Button
-                  size="lg"
-                  className="bg-white/15 backdrop-blur-2xl text-white hover:bg-white/25 text-lg px-12 py-8 border border-white/40 rounded-2xl font-light"
-                >
-                  Start Building
-                  <ArrowRight className="ml-3 w-6 h-6" />
-                </Button>
-              </motion.div>
+                Start Posting Tasks
+                <ArrowRight className="ml-3 w-5 h-5" />
+              </Button>
 
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  y: -5,
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-10 py-6 border-white/30 text-white hover:bg-white/20 hover:text-white/90 backdrop-blur-2xl bg-white/5 rounded-2xl font-light"
+                onClick={() => {
+                  const url = 'https://www.youtube.com/watch?v=a4JUMAPp9A0';
+                  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                  if (newWindow) newWindow.focus();
                 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg px-12 py-8 border-white/30 text-white hover:bg-white/20 hover:text-white/90 backdrop-blur-2xl bg-white/5 rounded-2xl font-light"
-                >
-                  <Play className="mr-3 w-6 h-6" />
-                  Watch Demo
-                </Button>
-              </motion.div>
+                <Play className="mr-3 w-5 h-5" />
+                Watch Demo
+              </Button>
             </motion.div>
           </div>
         </div>
@@ -964,91 +957,64 @@ export default function WorkProofPlatform() {
                 Join the decentralized future of work. Secure, transparent, and powered by blockchain.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                <Button
+                  size="lg"
+                  className="bg-white/20 backdrop-blur-2xl text-white hover:bg-white/30 text-lg px-10 py-6 border border-white/40 rounded-2xl font-light"
+                  onClick={() => {
+                    const url = 'https://coinbasecdphack.vercel.app/';
+                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                    if (newWindow) newWindow.focus();
+                  }}
                 >
-                  <Button
-                    size="lg"
-                    className="bg-white/20 backdrop-blur-2xl text-white hover:bg-white/30 text-lg px-10 py-6 border border-white/40 rounded-2xl font-light"
-                  >
-                    Start Posting Tasks
-                    <ArrowRight className="ml-3 w-5 h-5" />
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  Start Posting Tasks
+                  <ArrowRight className="ml-3 w-5 h-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-10 py-6 border-white/30 text-white hover:bg-white/20 hover:text-white/90 backdrop-blur-2xl bg-white/5 rounded-2xl font-light"
+                  onClick={() => {
+                    const url = 'https://www.youtube.com/watch?v=a4JUMAPp9A0';
+                    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+                    if (newWindow) newWindow.focus();
+                  }}
                 >
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-lg px-10 py-6 border-white/40 text-white hover:bg-white/15 backdrop-blur-2xl bg-white/8 rounded-2xl font-light"
-                  >
-                    Become a Freelancer
-                    <Users className="ml-3 w-5 h-5" />
-                  </Button>
-                </motion.div>
+                  <Play className="mr-3 w-5 h-5" />
+                  Watch Demo
+                </Button>
               </div>
             </GlassCard>
           </SmoothScrollReveal>
         </div>
       </section>
 
-      {/* Simplified Footer with Round GitHub and YouTube Icons */}
-      <motion.footer
-        className="border-t border-white/10 py-16 bg-white/3 backdrop-blur-2xl relative"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-      >
+      {/* Footer Section */}
+      <footer className="py-12 border-t border-white/10 relative">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center space-y-6">
-            <motion.div
-              className="flex items-center space-x-3"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          <div className="flex justify-center space-x-8">
+            <motion.a
+              href="https://www.youtube.com/watch?v=a4JUMAPp9A0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-white transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <div className="w-8 h-8 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30">
-                <div className="w-4 h-4 bg-white rounded-full" />
-              </div>
-              <span className="text-xl font-medium text-white">WorkProof</span>
-            </motion.div>
-
-            <div className="flex space-x-6">
-              <motion.div
-                whileHover={{ scale: 1.2, y: -3 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
-                <Link
-                  href="#"
-                  className="flex items-center justify-center w-12 h-12 text-white/60 hover:text-white transition-colors bg-white/10 backdrop-blur-xl rounded-full border border-white/20"
-                >
-                  <Github className="w-5 h-5" />
-                </Link>
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.2, y: -3 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
-                <Link
-                  href="#"
-                  className="flex items-center justify-center w-12 h-12 text-white/60 hover:text-white transition-colors bg-white/10 backdrop-blur-xl rounded-full border border-white/20"
-                >
-                  <Youtube className="w-5 h-5" />
-                </Link>
-              </motion.div>
-            </div>
-
-            <p className="text-white/40 text-sm font-light">© 2024 Work Proof. All rights reserved.</p>
+              <Youtube className="w-6 h-6" />
+            </motion.a>
+            <motion.a
+              href="https://github.com/chrsnikhil/coinbasecdphack"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-white transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Github className="w-6 h-6" />
+            </motion.a>
           </div>
         </div>
-      </motion.footer>
+      </footer>
     </div>
   )
 }
