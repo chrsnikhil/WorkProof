@@ -533,7 +533,7 @@ export default function WorkProofPlatform() {
                 size="lg"
                 className="text-lg px-10 py-6 border-white/30 text-white hover:bg-white/20 hover:text-white/90 backdrop-blur-2xl bg-white/5 rounded-2xl font-light"
                 onClick={() => {
-                  const url = 'https://www.youtube.com/watch?v=a4JUMAPp9A0';
+                  const url = 'https://www.youtube.com/watch?v=axEl5gJtcDA';
                   const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
                   if (newWindow) newWindow.focus();
                 }}
@@ -974,7 +974,7 @@ export default function WorkProofPlatform() {
                   variant="outline"
                   className="text-lg px-10 py-6 border-white/30 text-white hover:bg-white/20 hover:text-white/90 backdrop-blur-2xl bg-white/5 rounded-2xl font-light"
                   onClick={() => {
-                    const url = 'https://www.youtube.com/watch?v=a4JUMAPp9A0';
+                    const url = 'https://www.youtube.com/watch?v=axEl5gJtcDA';
                     const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
                     if (newWindow) newWindow.focus();
                   }}
@@ -993,7 +993,7 @@ export default function WorkProofPlatform() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex justify-center space-x-8">
             <motion.a
-              href="https://www.youtube.com/watch?v=a4JUMAPp9A0"
+              href="https://www.youtube.com/watch?v=axEl5gJtcDA"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white transition-colors"
